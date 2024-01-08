@@ -2,6 +2,9 @@ const min = 10;
 const max = 100;
 const maxAnzahlWürfe = 5;
 const bestrafungsFaktor = -3;
+const würfel = [6, 12, 20];
+
+var würfelButtons = [];
 
 var ziel;
 var rundenPunkte = 0;
@@ -10,9 +13,22 @@ var anzahlWürfe = 0;
 
 funktionZuweisen("rundeStarten", rundeStarten);
 funktionZuweisen("zugBeenden", zugBeenden);
-funktionZuweisen("würfel6", () => {würfeln(6)});
-funktionZuweisen("würfel12", () => {würfeln(12)});
-funktionZuweisen("würfel20", () => {würfeln(20)});
+
+
+UIinitialisieren();
+
+function UIinitialisieren(){
+    var würfelLeiste = document.getElementById("würfel");
+    würfel.forEach(zahl => {
+        var button = document.createElement("button");
+        button.id = "würfel-" + zahl;
+        button.innerHTML = zahl + "er Würfel würfeln";
+        würfelLeiste.appendChild(button);
+        button.addEventListener("click", () => {würfeln(zahl)});
+        würfelButtons.push(button);
+    });
+    updateUI(true);
+}
 
 function rundeStarten(){
     ziel = zufallszahl(min, max);
@@ -45,8 +61,12 @@ function zugBeenden(){
     updateUI(true);
 }
 
-function updateUI(startenKnopfAnzeigen = false){
-    
+function updateUI(rundeVorbei = false){
+    document.getElementById("rundeStarten").disabled = !rundeVorbei;
+    document.getElementById("zugBeenden").disabled = rundeVorbei;
+    würfelButtons.forEach(button => {
+        button.disabled = rundeVorbei;
+    });
 }
 
 // HILFSFUNKTIONEN:

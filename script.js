@@ -72,6 +72,9 @@ function updateUI(rundeVorbei = false){
     document.getElementById("runde").innerText = aktuelleRunde;
     document.getElementById("wurf").innerText = anzahlWürfe;
     document.getElementById("score").innerText = gesamtPunkte;
+    
+    document.getElementById("ziel").innerText = ziel;
+    document.getElementById("zielAnzeigen").classList = rundeVorbei ? "disabled" : "active";
 }
 
 // HILFSFUNKTIONEN:

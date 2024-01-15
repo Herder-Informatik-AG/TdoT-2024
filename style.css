@@ -36,6 +36,20 @@ body {
   display: none;
 }
 
+#zielAnzeigen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  border: 1px solid black;
+  color: rgb(0, 0, 0);
+}
+
+#zielAnzeigen.disabled {
+  display: none;
+}
+
 #leiste {
   width: 100%;
   left: 0px;

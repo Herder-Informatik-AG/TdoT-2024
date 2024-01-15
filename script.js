@@ -63,10 +63,7 @@ function zugBeenden(){
 
 function updateUI(rundeVorbei = false){
     document.getElementById("rundeStarten").disabled = !rundeVorbei;
-    document.getElementById("zugBeenden").disabled = rundeVorbei;
-    würfelButtons.forEach(button => {
-        button.disabled = rundeVorbei;
-    });
+    document.getElementById("leiste").classList = rundeVorbei ? "disabled" : "active";
 }
 
 // HILFSFUNKTIONEN:

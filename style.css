@@ -1,3 +1,33 @@
+body {
+  height: 100%;
+  background-image: url("assets/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#rundeStarten {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #008CBA;
+  font-size: 2rem;
+  padding: 1rem;
+  border: 1px solid black;
+  color: white;
+  transition-duration: 0.4s;
+}
+
+#rundeStarten:hover {
+  background-color: #00688B;
+  cursor: pointer;
+  transform: translateX(-50%) scale(1.1);
+}
+
+#rundeStarten:disabled {
+  display: none;
+}
+
 #leiste {
   width: 100%;
   left: 0px;
@@ -6,6 +36,10 @@
   display: flex;
   justify-content: center;
   border: 1px solid black;
+}
+
+#leiste.disabled {
+  display: none;
 }
 
 #leiste button {
@@ -19,10 +53,6 @@
   cursor: pointer;
 }
 
-#leiste button:disabled {
-  cursor: default;
-}
-
-#leiste button:hover :not(:disabled) {
+#leiste button:hover {
   background-color: lightgray;
 }

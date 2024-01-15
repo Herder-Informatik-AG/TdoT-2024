@@ -5,11 +5,16 @@
   <title>Würfelspiel</title>
 </head>
 <body>
+  <div id="anleitung" title="In dieser Anleitung wird das Spielprinzip erklärt">
+    <i>Anleitung:</i> In diesem Spiel geht es darum, in jeder Runde eine gewisse Punktzahl möglichst genau zu erreichen. Die Punktzahl wird dabei zufällig vorgegeben und du hast dafür insgesamt <a id="maxwürfe">0</a> Würfe mit unterschiedlichen Würfeln zur Verfügung. <br>
+    Am Ende wird die Differenz zwischen der vorgegebenen Punktzahl und deiner erreichten Punktzahl als Score gewertet. Je kleiner der Score dabei ist, desto besser! <br>
+    Solltest du mehr als die vorgegebene Punktzahl erreichen, wird diese Differenz mit <a id="bestrafung">x</a> multipliziert und als Score gewertet. Gehst du das Risiko ein?
+  </div>
   <button id="rundeStarten">Runde starten</button>
 
   <div id="leiste">
-    <!-- Hier werden die Knöpfe zum Würfeln eingefügt -->
     <button id="zugBeenden">Zug beenden</button>
+    <!-- Hier werden die Knöpfe zum Würfeln eingefügt -->
   </div>
 
   <div id="spielÜbersicht">

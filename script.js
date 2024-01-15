@@ -28,7 +28,8 @@ function UIinitialisieren(){
         button.addEventListener("click", () => {würfeln(zahl)});
         würfelButtons.push(button);
     });
-    document.getElementById("maxwürfe").innerText = maxAnzahlWürfe;
+    document.querySelectorAll("[id='maxwürfe']").forEach(element => element.innerText = maxAnzahlWürfe);
+    document.getElementById("bestrafung").innerText = Math.abs(bestrafungsFaktor);
     updateUI(true);
 }
 

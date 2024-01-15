@@ -5,6 +5,14 @@ body {
   background-repeat: no-repeat;
 }
 
+#anleitung {
+  width: 25%;
+  margin: 10px;
+  padding: 10px;
+  background-color: rgba(211, 211, 211, 0.8);
+  border-radius: 10px;
+}
+
 #rundeStarten {
   position: absolute;
   top: 50%;

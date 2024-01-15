@@ -6,6 +6,7 @@ const würfel = [6, 12, 20];
 
 var würfelButtons = [];
 
+var aktuelleRunde = 0;
 var ziel;
 var rundenPunkte = 0;
 var gesamtPunkte = 0;
@@ -27,11 +28,13 @@ function UIinitialisieren(){
         button.addEventListener("click", () => {würfeln(zahl)});
         würfelButtons.push(button);
     });
+    document.getElementById("maxwürfe").innerText = maxAnzahlWürfe;
     updateUI(true);
 }
 
 function rundeStarten(){
     ziel = zufallszahl(min, max);
+    aktuelleRunde += 1;
     rundenPunkte = 0;
     anzahlWürfe = 0;
     console.log("Ziel ist: ", ziel);
@@ -64,6 +67,10 @@ function zugBeenden(){
 function updateUI(rundeVorbei = false){
     document.getElementById("rundeStarten").disabled = !rundeVorbei;
     document.getElementById("leiste").classList = rundeVorbei ? "disabled" : "active";
+    
+    document.getElementById("runde").innerText = aktuelleRunde;
+    document.getElementById("wurf").innerText = anzahlWürfe;
+    document.getElementById("score").innerText = gesamtPunkte;
 }
 
 // HILFSFUNKTIONEN:

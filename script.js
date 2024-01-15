@@ -18,7 +18,7 @@ funktionZuweisen("zugBeenden", zugBeenden);
 UIinitialisieren();
 
 function UIinitialisieren(){
-    var würfelLeiste = document.getElementById("würfel");
+    var würfelLeiste = document.getElementById("leiste");
     würfel.forEach(zahl => {
         var button = document.createElement("button");
         button.id = "würfel-" + zahl;

@@ -57,7 +57,6 @@ body {
   position: fixed;
   display: flex;
   justify-content: center;
-  border: 1px solid black;
 }
 
 #leiste.disabled {
@@ -88,5 +87,21 @@ body {
   margin: 10px;
   padding: 10px;
   background-color: rgba(211, 211, 211, 0.8);
+  border-radius: 10px;
+}
+
+#wuerfel {
+  width: 100%;
+  left: 0px;
+  bottom: 25%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+}
+
+#wuerfel div {
+  padding: 25px;
+  margin: 10px;
+  background-color: beige;
   border-radius: 10px;
 }

@@ -38,6 +38,7 @@ function rundeStarten(){
     aktuelleRunde += 1;
     rundenPunkte = 0;
     anzahlWürfe = 0;
+    document.getElementById("wuerfel").innerHTML = "";
     console.log("Ziel ist: ", ziel);
     updateUI();
 }
@@ -48,6 +49,11 @@ function würfeln(maxAugenzahl){
     anzahlWürfe += 1;
     rundenPunkte += wurf;
     console.log("Du hast jetzt ", rundenPunkte, " von ", ziel, " Punkten.");
+    var anzeigeLeiste = document.getElementById("wuerfel");
+    var anzeige = document.createElement("div");
+    anzeige.id = "wurf-" + anzahlWürfe;
+    anzeige.innerText = wurf;
+    anzeigeLeiste.appendChild(anzeige);
     updateUI();
     if(rundenPunkte >= ziel || anzahlWürfe >= maxAnzahlWürfe){
         zugBeenden();

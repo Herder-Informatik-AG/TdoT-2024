@@ -1,5 +1,5 @@
 const min = 10;
-const max = 100;
+const max = 80;
 const maxAnzahlWürfe = 5;
 const bestrafungsFaktor = -3;
 const würfel = [6, 12, 20];

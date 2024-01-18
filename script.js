@@ -7,7 +7,7 @@ const würfel = [6, 12, 20];
 var würfelButtons = [];
 
 var aktuelleRunde = 0;
-var ziel;
+var ziel = 0;
 var rundenPunkte = 0;
 var gesamtPunkte = 0;
 var anzahlWürfe = 0;
@@ -78,6 +78,7 @@ function updateUI(rundeVorbei = false){
     document.getElementById("runde").innerText = aktuelleRunde;
     document.getElementById("wurf").innerText = anzahlWürfe;
     document.getElementById("score").innerText = gesamtPunkte;
+    document.getElementById("rest").innerText = ziel - rundenPunkte;
     
     document.getElementById("ziel").innerText = ziel;
     document.getElementById("zielAnzeigen").classList = rundeVorbei ? "disabled" : "active";

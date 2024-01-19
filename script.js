@@ -78,7 +78,15 @@ function updateUI(rundeVorbei = false){
     document.getElementById("runde").innerText = aktuelleRunde;
     document.getElementById("wurf").innerText = anzahlWürfe;
     document.getElementById("score").innerText = gesamtPunkte;
-    document.getElementById("rest").innerText = ziel - rundenPunkte;
+    if (ziel-rundenPunkte>0){
+        document.getElementById("rest").innerText = ziel - rundenPunkte;
+    }
+    if (ziel-rundenPunkte<0){
+        document.getElementById("rest").innerText = "Zu viel gewürfelt!";
+    }
+    if (ziel-rundenPunkte==0){
+        document.getElementById("rest").innerText = "Geschafft!";
+    }
     
     document.getElementById("ziel").innerText = ziel;
     document.getElementById("zielAnzeigen").classList = rundeVorbei ? "disabled" : "active";
